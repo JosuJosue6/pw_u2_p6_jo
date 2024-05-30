@@ -13,9 +13,23 @@
     <div id="myApp">
         <header></header>
         <nav></nav>
-        <section></section>
+        <section>
+            <h1> Hola mundo desde Vue.JS</h1>
+            <p> {{1+1}} </p>
+            <p>{{[1,2,3,4]}}</p>
+            <p>{{true ? 'verdadero':'False'}}</p>
+
+            <p>{{mensaje}}</p>
+            <p>{{valor}}</p>
+<!--Se lo coloca donde tenga sentido realizar un evento-->
+            <button v-on:click="cambiarTexto">Cambiar Texto</button>
+            <button v-on:click="sumar">Sumar</button>
+        </section>
         <footer></footer>
     </div>
+
+    <p> {{1+1}} </p>
+    <p>{{valor}}</p>
     <!--Una excepcion es poner el archivo de configuracion de Vue-->
     <script src="../js/app.js"></script>
 </body>
