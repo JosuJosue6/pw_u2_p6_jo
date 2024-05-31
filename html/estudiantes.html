@@ -13,7 +13,15 @@
         <header></header>
         <nav></nav>
         <section>
-            <button v-on:click="agregar">Agregar</button>
+
+            <label for="idNombre">Nombre: </label>
+            <!--Todo lo que va aqui por este v-model: se refleja de ida y de vuelta-->
+            <input v-model="nombre" id="idNombre" type="text">
+            <label for="idApellido">Apellido: </label>
+            <input @keypress.enter="agregar2" v-model="apellido" id="idApellido" type="text">
+
+            <!--No solo los elementos button tienen eventos
+            <button v-on:click="agregar">Agregar</button>-->
             <ul>
                 <!--<li>
                     <p>{{lista[0].nombre}} A: {{lista[0].apellido}}</p>
@@ -36,8 +44,8 @@
                 </li>-->
 
                 <li v-for="({nombre, apellido}, index) in lista">
-                    <h3>{{index +1}} - {{nombre}}</h3>
-                    <h4>{{apellido}}</h4>
+                    <h3 v-if:="nombre!==null" >{{index +1}} - {{nombre}}</h3>
+                    <h4 v-if:="apellido!==null">{{apellido}}</h4>
 
                 </li>
             </ul>
